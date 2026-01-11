@@ -1,0 +1,539 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+.gradient-background {
+  background: linear-gradient(45deg, #F8F7BA, #F5D2D2, #555879);
+  height: 100%;
+  width:100%;
+  background-position: 0% 50%;
+  background-size: 180% 180%;
+  animation: gradient-animation 3s ease infinite;
+  padding: 3rem 0;
+  margin: 0;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    
+
+/* --- VARIABEL WARNA UNTUK SETIAP TEMA --- */
+/* Tema Default (Terang) */
+:root {
+    --gradient-bg: linear-gradient(45deg, #F8F7BA, #F5D2D2, #555879);
+    --text-color: #e9dbdb;
+    --surface-color: rgba(255, 255, 255, 0.5);
+    --card-bg: rgba(255, 255, 255, 0.486);
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --text-shadow-color: rgba(98, 111, 71, 0.5);
+    --toggle-track-bg: #F5D2D2;
+    --toggle-text-color: #626F47;
+    --toggle-slider-bg: #626F47;
+  }
+
+/* Tema Gelap */
+body.dark-mode {
+   --gradient-bg: linear-gradient(45deg, #bfbfd6, #16213e, #68497a);
+    --bg-color: #f3e9e9;
+    --text-color: #e0e0e0;
+    --surface-color: #dad2d2;
+    --shadow-color: rgba(40, 10, 10, 0.4);
+    --toggle-track-bg: #1e1616;
+    --toggle-text-color: #e0e0e0;
+    --toggle-slider-bg: #007bff;
+}
+
+.gradient-background {
+    /* Gunakan variabel gradien */
+    background: var(--gradient-bg);
+    min-height: 100vh;
+    padding: 3rem 0;
+}
+
+/* --- GAYA GLOBAL --- */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.gradient-background {
+    background: var(--gradient-bg);
+    min-height: 100vh;
+    transition: background 0.4s ease;
+}
+
+/* --- PENGATURAN PENGGARIS TOGGLE (Menggunakan Variabel) --- */
+.theme-toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--surface-color); /* Menggunakan variabel */
+    padding: 3px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px var(--shadow-color); /* Menggunakan variabel */
+    border: 1px solid var(--text-color); /* Menggunakan variabel */
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.toggle-track {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    background-color: var(--toggle-track-bg); /* Menggunakan variabel */
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--toggle-text-color); /* Menggunakan variabel */
+    user-select: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 5px;
+    left: 5px; /* Posisi awal di kiri (mode gelap) */
+    width: 30px;
+    height: 30px;
+    background-color: var(--toggle-slider-bg); /* Menggunakan variabel */
+    border-radius: 50%;
+    cursor: grab;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, left 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.toggle-slider:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+}
+
+.slider-icon {
+    color: white;
+    font-size: 16px;
+}
+    body { 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     
+    }
+    .header{
+      margin-top: 1px;
+    }
+
+    .nav-link{
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+    transition-property :all;
+
+    }
+    .nav-link:hover{
+    transform: scale(1.05); /* Membesarkan sedikit saat hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Bayangan lebih tajam */
+    border-radius: 8px;
+      
+  
+    }
+
+    .transisi:hover{
+      transform: scale(1.05); /* Membesarkan sedikit saat hover */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Bayangan lebih tajam */
+      border-radius: 8px;
+    }
+    .transisi.clicked {
+  background-color: #4CAF50; /* hijau elegan */
+  color: white;
+}
+
+
+    .elemen img {
+    position: absolute;
+    width: 70px; /* atur ukuran gambar */
+    height: auto;
+    top: 320px;
+
+  }
+
+
+    .kotak-utama1{
+      position: relative;
+      overflow: hidden;
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-bottom: 10%;
+      width: 80vw;
+      height: 65vh;
+      background-color: rgba(255, 255, 255, 0.486);      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding:20px;
+      border-radius: 12px;
+      box-shadow: 0 0 50px rgba(0,0,0,0.3);
+
+    }
+/* logo bagian atas*/
+    .akudia{
+      display: flex;
+      gap: 20px;
+    }
+/*home page*/
+    .Judul h1{
+  text-align: center;
+  color: #68497a;
+  font-family: "Oi", serif;
+  font-weight: 40;
+  font-style: normal;
+  text-align: center;
+  margin-top: 5%;
+  letter-spacing: 5px;
+  text-shadow: 0 0 15px rgb(255, 255, 255);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideFade 0.6s ease forwards;
+  animation-delay: 0.2s;
+
+
+
+
+    }
+ @keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  .kotak-utama1 p {
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+      text-shadow: 0 0 10px rgb(98, 111, 71);
+
+    }
+
+/*Foto ain*/
+.foto1{
+margin-top: 30px;
+ border-radius: 20px;
+ border-top-right-radius: 350px;
+ border-bottom-left-radius: 10px;
+ opacity: 0;
+ transform: translateX(-50px);
+  animation: fadeLeft 4s ease forwards;
+}
+/* Keyframes */
+@keyframes fadeLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*Klimat samping foto */
+
+.atas{ 
+  margin-top: 50px;
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color:#68497a;
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+
+  font-weight: bold;
+  font-size: 30px;
+   opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+  animation-delay: 1s;
+
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.lead p{
+    margin-top: 5px;
+    font-size: 17px;
+    font-family:'Times New Roman', Times, serif;
+    color:whitesmoke;
+}
+
+/*Kalimat my journey*/
+
+.lead{
+      margin-top: 5px;
+    font-size: 17px;
+    font-family:'Times New Roman', Times, serif;
+    color:black;
+}
+b{
+  font-weight: bold;
+}
+
+
+
+.Bagian1 h1{ 
+  margin-top: 50px;
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-family: #14180d;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 3%;
+  letter-spacing: 3px;
+}
+.Text12{
+    font-family: "Gravitas One", serif;
+     font-weight: 300;
+  font-style: normal;
+  color:#38461c;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+  /*Pengaturan ukuran Hp bagian atas*/
+ @media (max-width: 768px) {
+.Judul h1{
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+}
+    .nav-item{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    }
+
+ .kotak-utama1 p {
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+      text-shadow: 0 0 10px rgb(98, 111, 71);
+
+}
+.bawah{
+  background-size: 200% 200%;
+  margin-top: none;
+}
+.Text12{
+    font-family: "Gravitas One", serif;
+     font-weight: 300;
+  font-style: normal;
+  color:#38461c;
+  font-weight: bold;
+  font-size: 30px;
+}
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.jarak{
+  margin-bottom: 20px;
+}
+
+.nav-link{
+  color:white;
+}
+
+  /*Bagian hard skill*/
+
+.Text2{
+    font-family: "Gravitas One", serif;
+     font-weight: 400;
+  font-style: normal;
+  color:#68497a;
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 5px;
+  text-shadow: 0 0 15px rgb(255, 255, 255);
+
+}
+.card-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  font-size: 150% ;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 0 0 10px rgb(98, 111, 71);
+}
+
+.latarcard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.486);    
+  border-radius: 500px;
+  box-shadow: 0 0 90px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.latarcard:hover {
+  transform: scale(1.05); /* Membesarkan sedikit saat hover */
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Bayangan lebih tajam */
+}
+
+.kalimat{ 
+  font-size: larger;      
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+
+.html{
+      margin-top: 5px;
+      font-size: 30px;
+      color: white;
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+      text-shadow: 0 0 10px rgb(98, 111, 71);
+}
+
+.sub{
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+  /*Bagian Hard skill*/
+  
+
+.kalimat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+:root {
+  --primary-color:rgb(98, 111, 71) ; /* biru */
+}
+
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+.judul4 h2{
+  font-family: "Gravitas One", serif;
+  font-weight: 200;
+  font-style: normal;
+  color:#68497a;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 5px;
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+  text-align: center;
+  margin-bottom: 20px;
+
+ 
+}
+.skill-item {
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid ;
+    background-color: rgba(255, 255, 255, 0.486);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    border-color: 3% #68497a ;
+
+}
+
+.skill-item i {
+    font-size: 3rem;
+    color: #68497a;
+    margin-bottom: 15px;
+}
+
+.skill-item h3 {
+    font-size: 1.1rem;
+    color: white;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 0 0 10px #68497a;
+
+}
+.akuini{
+  color:#bfbfd6;
+}
+
+/* Animasi masuk dari bawah */
+.skill-item {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Delay animasi untuk tiap item */
+.skill-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.skill-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.skill-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Keyframes animasi */
+@keyframes fadeInUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Efek hover */
+.skill-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
