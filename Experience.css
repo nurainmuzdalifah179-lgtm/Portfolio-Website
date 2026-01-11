@@ -1,24 +1,27 @@
-.gradient-background {
-  background: linear-gradient(45deg, #F8F7BA, #F5D2D2, #555879);
-  height: 100%;
-  width:100%;
-  background-size: 180% 180%;
-  animation: gradient-animation 8s ease infinite;
-  padding: 3rem 0;
-  margin: 0;
+* {
+    box-sizing: border-box;
 }
 
+.gradient-background {
+    background: linear-gradient(45deg, #F8F7BA, #F5D2D2, #555879);
+    height: 100%;
+    width:100%;
+    background-size: 180% 180%;
+    animation: gradient-animation 8s ease infinite;
+    padding: 3rem 0;
+    margin: 0;
+}
 
 @keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 :root {
@@ -31,11 +34,11 @@
     --toggle-track-bg: #F5D2D2;
     --toggle-text-color: #626F47;
     --toggle-slider-bg: #626F47;
-  }
+}
 
 /* Tema Gelap */
 body.dark-mode {
-   --gradient-bg: linear-gradient(45deg, #bfbfd6, #16213e, #68497a);
+    --gradient-bg: linear-gradient(45deg, #bfbfd6, #16213e, #68497a);
     --bg-color: #f3e9e9;
     --text-color: #e0e0e0;
     --surface-color: #dad2d2;
@@ -73,11 +76,11 @@ body {
     top: 20px;
     right: 20px;
     z-index: 1000;
-    background-color: var(--surface-color); /* Menggunakan variabel */
+    background-color: var(--surface-color);
     padding: 3px;
     border-radius: 50px;
-    box-shadow: 0 4px 15px var(--shadow-color); /* Menggunakan variabel */
-    border: 1px solid var(--text-color); /* Menggunakan variabel */
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border: 1px solid var(--text-color);
     transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
@@ -85,7 +88,7 @@ body {
     position: relative;
     width: 200px;
     height: 40px;
-    background-color: var(--toggle-track-bg); /* Menggunakan variabel */
+    background-color: var(--toggle-track-bg);
     border-radius: 25px;
     display: flex;
     align-items: center;
@@ -93,7 +96,7 @@ body {
     padding: 0 15px;
     font-size: 11px;
     font-weight: 600;
-    color: var(--toggle-text-color); /* Menggunakan variabel */
+    color: var(--toggle-text-color);
     user-select: none;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -101,10 +104,10 @@ body {
 .toggle-slider {
     position: absolute;
     top: 5px;
-    left: 5px; /* Posisi awal di kiri (mode gelap) */
+    left: 5px;
     width: 30px;
     height: 30px;
-    background-color: var(--toggle-slider-bg); /* Menggunakan variabel */
+    background-color: var(--toggle-slider-bg);
     border-radius: 50%;
     cursor: grab;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, left 0.3s ease;
@@ -128,52 +131,51 @@ header {
     text-align: center;
     padding: 100px 0 60px 0;
 }
+
 /* Animasi fade-in untuk section ORGANISASI */
 #experience {
-  opacity: 0;
-  transform: translateY(50px);
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.3s;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
 }
 
 /* Keyframes animasi */
 @keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-
 
 /* --- Section Experience (Timeline) --- */
-.atas h2{
+.atas h2 {
     font-family: "Gravitas One", serif;
-  font-weight: 100;
-  font-style: normal;
-  color:#68497a;
-  font-weight: bold;
-  font-size: 40px;
-  text-shadow: 0 0 15px rgb(255, 255, 255);
-
+    font-weight: 100;
+    font-style: normal;
+    color: #68497a;
+    font-weight: bold;
+    font-size: 40px;
+    text-shadow: 0 0 15px rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.atas h3{
-  font-weight: bold;
-  font-family: 'poppins', sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-  color: white;
-  font-family: 'Times New Roman', Times, serif;
-  text-shadow: 0 0 15px rgb(98, 111, 71);
-
+.atas h3 {
+    font-weight: bold;
+    font-family: 'poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 0 0 15px rgb(98, 111, 71);
 }
-
-
 
 .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Garis vertikal tengah */
@@ -190,9 +192,10 @@ header {
 
 .timeline-item {
     position: relative;
-    width: 50%;
-    padding: 20px 40px;
+    width: 100%;
+    padding: 20px 0;
     box-sizing: border-box;
+    margin-bottom: 40px;
 }
 
 /* Titik pada timeline */
@@ -200,6 +203,8 @@ header {
     content: '';
     position: absolute;
     top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 15px;
     height: 15px;
     background-color: rgb(98, 111, 71);
@@ -207,36 +212,19 @@ header {
     z-index: 1;
 }
 
-/* Posisi item di kiri */
-.timeline-item:nth-child(odd) {
-    left: 0;
-    text-align: right;
-}
-.timeline-item:nth-child(odd)::before {
-    right: -7.5px; /* Setengah dari lebar titik */
-}
-
-/* Posisi item di kanan */
-.timeline-item:nth-child(even) {
-    left: 50%;
-}
-.timeline-item:nth-child(even)::before {
-    left: -7.5px;
-}
-
 .timeline-item h3 {
     font-size: 1.4rem;
     margin-bottom: 5px;
-      font-family: 'Times New Roman', Times, serif;
-
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
 }
 
 .timeline-item h4 {
     font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: 5px;
-      font-family: 'Times New Roman', Times, serif;
-
+    font-family: 'Times New Roman', Times, serif;
+    color: #e9dbdb;
 }
 
 .timeline-item span {
@@ -245,287 +233,180 @@ header {
     color: white;
     font-family: 'Times New Roman', Times, serif;
     text-shadow: 0 0 15px rgb(98, 111, 71);
-
-    
-    
 }
+
 .timeline-item p {
     margin-top: 15px;
     font-family: 'Times New Roman', Times, serif;
-
+    color: white;
 }
 
-
-.akudia{
-      display: flex;
-      gap: 20px;
-    }
+.akudia {
+    display: flex;
+    gap: 20px;
+}
 
 .logo svg {
-  transition: transform 0.3s ease;
-  cursor: pointer;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.nav-link{
-  color:white;
-}
-
-
-/*menambah foto*/
-
-/*bgian 1*/
-.container {
-  position: relative; /* penting agar anak bisa ditumpuk */
-  padding: 2rem;
-}
-
-.floating-photo {
-  position: absolute;
-  right: 30px;     /* arah horizontal */
-  width: 250px;
-  height: 150px;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.bersama{
-  position: absolute;
-  top: 190px;       /* arah vertikal */
-  right: 30px;     /* arah horizontal */
-  width: 250px;
-  height: 150px;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
-}
-
-
-/*bgian 2*/
-.containerkedua {
-  position: relative; /* penting agar anak bisa ditumpuk */
-  padding: 2rem;
-}
-
-
-.kedua{
-  position: absolute;
-  top: 20px;       /* arah vertikal */
-  right: 450px;
-  width: 250px;
-  height: 150px;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.buka{
-  position: absolute;
-  top: 200px;       /* arah vertikal */
-  right: 450px;
-  width: 250px;
-  height: 150px;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
-
-}
-
-
-/*bgian 3*/
-.ketigacontainer {
-  position: relative; /* penting agar anak bisa ditumpuk */
-  padding: 2rem;
-}
-
-
-.floating3-photo{
-  position: absolute;
-  left: 450px;     /* arah horizontal */
-  width: 250px;
-  height: 150px;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-
-.makan{
-  position: absolute;
-  top: 200px;       /* arah vertikal */
-  left: 450px;
-  width: 250px;
-  height: 200px;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
-}
-
-/*bagian4*/
-
-
-/*bagian5*/
-
-.terakhir {
-  position: relative; /* penting agar anak bisa ditumpuk */
-  padding: 2rem;
-}
-
-
-.INTI{
-  position: absolute;
-  right: 400px;     /* arah horizontal */
-  width: 250px;
-  height: 170px;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.PASKIBRA{
-  position: absolute;
-  right: 400px;     /* arah horizontal */
-  width: 250px;
-  margin-top: 180px;
-  height: 170px;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
-}
-
-
-@media (max-width: 768px) {
-  /*menambah foto*/
-
-/*bgian 1*/
-
-  .floating-photo {
-  position: absolute;
-  top: 40px;       /* arah vertikal */
-  right: 15px;     /* arah horizontal */
-  width: 180px;
-  height: auto;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.bersama{
-  position: absolute;
-  top: 200px;       /* arah vertikal */
-  right: 15px;     /* arah horizontal */
-  width: 180px;
-  height: auto;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
-}
-.kedua{
-  position: absolute;
-  top: 20px;       /* arah vertikal */
-  right: 200px;
-  width: 180px;
-  height: auto;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.buka{
-  position: absolute;
-  top: 150px;       /* arah vertikal */
-  right: 200px;
-  width: 180px;
-  height: auto;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
-}
-.floating3-photo{
-  position: absolute;
-  left: 200px;     /* arah horizontal */
-  width: 200px;
-  height: 140px;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.makan{
-  position: absolute;
-  top: 200px;       /* arah vertikal */
-  left: 200px;
-  width: 200px;
-  height: 150px;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
-}
-.INTI{
-  position: absolute;
-  right: 200px;     /* arah horizontal */
-  width: 200px;
-  height: 140px;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-.PASKIBRA{
-  position: absolute;
-  right: 200px;     /* arah horizontal */
-  width: 200px;
-  margin-top: 180px;
-  height: 140px;
-  z-index: 10;     /* pastikan foto di atas elemen lain */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
-}
-
-
-}
-/* Animasi masuk */
-.timeline-item {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease forwards;
-}
-
-/* Delay bertahap untuk tiap item */
-.timeline-item:nth-child(1) {
-  animation-delay: 0.9s;
-}
-.timeline-item:nth-child(2) {
-  animation-delay: 3s;
-}
-.timeline-item:nth-child(3) {
-  animation-delay: 5s;
-}
-.timeline-item:nth-child(4) {
-  animation-delay: 7s;
-}
-
-/* Keyframes animasi */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.nav-link {
+    color: white;
 }
 
 /* Efek hover pada gambar */
 img {
-  transition: transform 0.9s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
 }
 
 img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Animasi masuk */
+.timeline-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Delay bertahap untuk tiap item */
+.timeline-item:nth-child(1) {
+    animation-delay: 0.9s;
+}
+.timeline-item:nth-child(2) {
+    animation-delay: 1.8s;
+}
+.timeline-item:nth-child(3) {
+    animation-delay: 2.7s;
+}
+.timeline-item:nth-child(4) {
+    animation-delay: 3.6s;
+}
+
+/* Media Queries untuk Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .header {
+        padding: 10px 0;
+    }
+    
+    .logo-area img {
+        width: 80px;
+        height: 96px;
+    }
+    
+    .nav {
+        flex-direction: column;
+        margin: 15px 0;
+    }
+    
+    .nav-item {
+        margin: 5px 0;
+    }
+    
+    .akudia {
+        margin-top: 10px;
+    }
+    
+    /* Theme toggle */
+    .theme-toggle-container {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .toggle-track {
+        width: 150px;
+        height: 30px;
+        font-size: 9px;
+    }
+    
+    .toggle-slider {
+        width: 25px;
+        height: 25px;
+        top: 2.5px;
+        left: 2.5px;
+    }
+    
+    /* Timeline adjustments */
+    .atas h2 {
+        font-size: 30px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .timeline {
+        padding: 0 15px;
+    }
+    
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-item::before {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        padding-left: 50px;
+        padding-right: 15px;
+    }
+    
+    .timeline-item h3 {
+        font-size: 1.2rem;
+    }
+    
+    .timeline-item h4 {
+        font-size: 1rem;
+    }
+    
+    .timeline-item p {
+        font-size: 0.9rem;
+    }
+    
+    /* Footer adjustments */
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav {
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small devices adjustments */
+    .atas h2 {
+        font-size: 24px;
+    }
+    
+    .timeline-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .timeline-item h4 {
+        font-size: 0.9rem;
+    }
+    
+    .timeline-item p {
+        font-size: 0.85rem;
+    }
+    
+    .timeline-item {
+        padding-left: 40px;
+    }
+    
+    .timeline::before {
+        left: 15px;
+    }
+    
+    .timeline-item::before {
+        left: 15px;
+        width: 12px;
+        height: 12px;
+    }
 }
